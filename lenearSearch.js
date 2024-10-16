@@ -44,13 +44,24 @@
 // console.log(removeDuplicate(srt))
 
 const readline = require('readline');
+const fs = require('fs');
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output:process.stdout
+// })
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output:process.stdout
-})
+// rl.question('Enter your name: ', (name) => {
+//     console.log('Your name is :' + name);
+//     rl.close();
+// })
 
-rl.question('Enter your name: ', (name) => {
-    console.log('Your name is :' + name);
-    rl.close();
-})
+fs.readFile('./files/input.txt', 'utf-8', (err, data) => {
+    console.log(data)
+    fs.readFile('./files/output.txt', 'utf-8', (err, data1) => {
+        console.log(data);
+        fs.writeFile('./files/write.txt', `${data} \n ${data1}`, () => {
+            console.log('finish');
+        })
+    })
+});
+console.log('firts');
