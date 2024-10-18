@@ -64,4 +64,3 @@ fs.readFile('./files/input.txt', 'utf-8', (err, data) => {
         })
     })
 });
-console.log('firts');
