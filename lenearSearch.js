@@ -66,3 +66,16 @@
 // });
 
 console.log(typeof null)
+
+const promise = new Promise((resolve,reject)=>{
+    if(b === 0){
+        reject('not divisoble')
+    }else{
+        resolve(a/b)
+    }
+})
+const arrow = (a, b) => {
+    return promise
+}
+const dd = arrow(2,3).then(result => console.log('result',result))
+.catch(error => console.log(error))
